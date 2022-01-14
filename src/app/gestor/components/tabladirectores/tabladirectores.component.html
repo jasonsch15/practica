@@ -1,0 +1,26 @@
+<table class="table  mt-5" *ngIf="directores.length>0; else sinDirectores">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Fecha Nacimiento</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let director of directores;index as i">
+      <tr>
+        <th scope="row">{{i+1}}</th>
+        <td>{{director.nombre}}</td>
+        <td>{{director.apellido}}</td>
+        <td>{{director.generoFavorito}}</td>
+        <td>{{director.fechaNacimiento}}</td>
+        <td><button class="btn btn-success">Peliculas</button></td>
+      </tr>
+    
+    </tbody>
+  </table>
+  <ng-template #sinDirectores>
+      <h4 class="text-center mt-5">No hay directores registrados</h4>
+  </ng-template>

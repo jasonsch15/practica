@@ -1,0 +1,31 @@
+<form>
+   <h3 class="text-center">Información de la pelicula</h3>
+
+   <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input type="text" class="form-control" [(ngModel)]="pelicula.nombre" name="nombre" />
+   </div>
+   <div class="mb-3">
+      <label class="form-label">Descripcion</label>
+      <input type="text" class="form-control" [(ngModel)]="pelicula.descripcion" name="descripcion" />
+   </div>
+
+   <div class="mb-3">
+      <label class="form-label">Genero</label>
+      <input type="text" class="form-control" [(ngModel)]="pelicula.genero" name="descripcion" />
+   </div>
+   <div class="mb-3">
+      <label class="form-label">Año</label>
+      <input type="number" class="form-control" [(ngModel)]="pelicula.anio" name="anio" />
+   </div>
+   <div class="mb-3">
+      <label class="form-label">Director</label>
+      <select class="form-select" [(ngModel)]="pelicula.director" name="generoFavorito">
+         <option [ngValue]="director" *ngFor="let director of directores">{{director.nombre}}</option>
+      </select>
+   </div>
+
+   <button class="btn btn-primary" (click)="registrarPelicula()">
+      Registrar Pelicula
+   </button>
+</form>
